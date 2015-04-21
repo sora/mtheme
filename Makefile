@@ -8,7 +8,7 @@ INSTALL_DIR = $(TEXMFHOME)/tex/latex/mtheme
 DOCKER_IMAGE = latex-image
 DOCKER_CONTAINER = latex-container
 
-.PHONY: clean install docker-run docker-rm
+.PHONY: clean install docker-run docker-rm $(PDF)
 
 all: $(PDF)
 
