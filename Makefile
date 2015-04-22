@@ -3,7 +3,7 @@ PDF = $(BASE).pdf
 TEX = $(BASE).tex
 BIB = $(BASE).bib
 
-STY_FILES := $(wildcard *.sty)
+STY_SRCS := $(wildcard *.sty)
 
 .PHONY: clean
 
