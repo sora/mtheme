@@ -95,24 +95,7 @@ text, \alert{accent} parts or show \textbf{bold} results.
   \begin{figure}
     \newcounter{density}
     \setcounter{density}{20}
-    \begin{tikzpicture}
-      \def\couleur{mLightBrown}
-      \path[coordinate] (0,0)  coordinate(A)
-                  ++( 90:5cm) coordinate(B)
-                  ++(0:5cm) coordinate(C)
-                  ++(-90:5cm) coordinate(D);
-      \draw[fill=\couleur!\thedensity] (A) -- (B) -- (C) --(D) -- cycle;
-      \foreach \x in {1,...,40}{%
-          \pgfmathsetcounter{density}{\thedensity+20}
-          \setcounter{density}{\thedensity}
-          \path[coordinate] coordinate(X) at (A){};
-          \path[coordinate] (A) -- (B) coordinate[pos=.10](A)
-                              -- (C) coordinate[pos=.10](B)
-                              -- (D) coordinate[pos=.10](C)
-                              -- (X) coordinate[pos=.10](D);
-          \draw[fill=\couleur!\thedensity] (A)--(B)--(C)-- (D) -- cycle;
-      }
-    \end{tikzpicture}
+    \input{fig/rotate}
     \caption{Rotated square from
     \href{http://www.texample.net/tikz/examples/rotated-polygons/}{texample.net}.}
   \end{figure}
@@ -146,39 +129,12 @@ text, \alert{accent} parts or show \textbf{bold} results.
 \end{frame}
 \begin{frame}{Line plots}
   \begin{figure}
-    \begin{tikzpicture}
-      \begin{axis}[
-        mlineplot,
-        width=0.9\textwidth,
-        height=6cm,
-      ]
-
-        \addplot {sin(deg(x))};
-        \addplot+[samples=100] {sin(deg(2*x))};
-
-      \end{axis}
-    \end{tikzpicture}
+    \input{fig/line}
   \end{figure}
 \end{frame}
 \begin{frame}{Bar charts}
   \begin{figure}
-    \begin{tikzpicture}
-      \begin{axis}[
-        mbarplot,
-        xlabel={Foo},
-        ylabel={Bar},
-        width=0.9\textwidth,
-        height=6cm,
-      ]
-
-      \addplot plot coordinates {(1, 20) (2, 25) (3, 22.4) (4, 12.4)};
-      \addplot plot coordinates {(1, 18) (2, 24) (3, 23.5) (4, 13.2)};
-      \addplot plot coordinates {(1, 10) (2, 19) (3, 25) (4, 15.2)};
-
-      \legend{lorem, ipsum, dolor}
-
-      \end{axis}
-    \end{tikzpicture}
+    \input{fig/bar}
   \end{figure}
 \end{frame}
 \begin{frame}{Quotes}
