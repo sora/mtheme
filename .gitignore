@@ -1,5 +1,3 @@
-demo.pdf
-
 *.fls
 *.acn
 *.acr
@@ -33,3 +31,10 @@ demo.pdf
 *.vrb
 *.xdy
 *.tdo
+
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
