@@ -1,19 +1,19 @@
-SRC = demo.tex
-PDF = demo.pdf
-AUX = demo.aux
+BASE = slide
+PDF = $(BASE).pdf
+TEX = $(BASE).tex
+BIB = $(BASE).bib
 
-TEXC := xelatex
-TEXC_OPTS += -shell-escape
+STY_FILES := $(wildcard *.sty)
 
-.PHONY: clean $(PDF)
+.PHONY: clean
 
 all: $(PDF)
 
-$(AUX):
-	$(TEXC) $(TEXC_OPTS) $(SRC)
+$(PDF): $(STY_SRCS) $(TEX) $(BIB)
+	latexmk $(BASE)
 
-$(PDF): beamerthemem.sty $(AUX) $(SRC)
-	$(TEXC) $(TEXC_OPTS) $(SRC)
+view: $(PDF)
+	latexmk -pv
 
 clean:
 	@rm -f $(PDF)
